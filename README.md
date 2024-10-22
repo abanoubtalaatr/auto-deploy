@@ -1,4 +1,4 @@
-# Auto Deploy Setup Using SSH Keys
+# Automated Deployment Setup Using SSH Keys with GitHub Actions CI/CD
 
 This guide outlines the steps to set up an automatic deployment process using SSH keys. The private key will be stored in GitHub Secrets, while the public key will be added to your server. Follow these steps to enable auto-deployment when pushing to the repository.
 
@@ -85,12 +85,6 @@ jobs:
     - name: Deploy to Server
       run: |
         ssh -o StrictHostKeyChecking=no username@ip-of-your-server 'cd /path/to/public_html && git pull origin main && echo "Deployment completed successfully." || echo "Deployment failed."'
-
-
-
-
-
-
 
 
 
